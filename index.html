@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Good Memories 2</title>
+	<title>Invasion!</title>
 	<style>
 		/**
  * CSS Reset from http://meyerweb.com/eric/tools/css/reset/ 
@@ -612,31 +612,57 @@ p + p {
 </head>
 <body>
 	<div id="root"></div>
-	<tw-storydata name="Good Memories 2" startnode="1" creator="Twine" creator-version="2.2.1" ifid="B2169FD7-EE3B-400E-B9E6-902F00CFE7A4" zoom="0.6" format="Adventures" format-version="1.1.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+	<tw-storydata name="Invasion!" startnode="1" creator="Twine" creator-version="2.2.1" ifid="B2169FD7-EE3B-400E-B9E6-902F00CFE7A4" zoom="0.6" format="Adventures" format-version="1.1.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Untitled Passage" tags="" position="700,300" size="100,100">&lt;% story.config.displayCharacterPanel = false; %&gt;
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.config = {
+	deathPassage: "death",
+	deadMessage: "Continue"
+};
+
+
+
+
+
+
+
+
+
+
+
+
+</script><tw-tag name="theme-metal-red" color="red"></tw-tag>,<tw-tag name="button-white" color="gray"></tw-tag>,<tw-tag name="button-yellow" color="yellow"></tw-tag>,<tw-tag name="theme-rock" color="purple"></tw-tag><tw-passagedata pid="1" name="Credits" tags="button-white" position="996,435" size="100,100">&lt;% 
+story.config.displayCharacterPanel = false;
+monstersKilled = 0;
+deathCount = 0;
+%&gt;
 
 Exclaimer: This Twine game uses a custom twine story format called &quot;Adventures&quot; created by Longwelwind. All art and story format is credited to him.
 
 [[Play|Wake Up]]
 
 
-</tw-passagedata><tw-passagedata pid="2" name="Wake Up" tags="button-green" position="825,300" size="100,100">You wake up in a forest wearing unfamiliar clothing. Your memory is hazy and you body feels heavy.
+</tw-passagedata><tw-passagedata pid="2" name="Wake Up" tags="button-green" position="1125,436" size="100,100">You wake up in a forest wearing unfamiliar clothing. Your memory is hazy and you body feels heavy.
 
 As you turn your head, something on the ground catches your eye.
 
 [[Stand up|forest1]]
-</tw-passagedata><tw-passagedata pid="3" name="forest1" tags="" position="961,298" size="100,100">You stand up, finding a backpack on the ground. This seems to belong to you.
+</tw-passagedata><tw-passagedata pid="3" name="forest1" tags="" position="1124,296" size="100,100">You stand up, finding a backpack on the ground. This seems to belong to you.
 
-[[Pick it up|forest 2]]</tw-passagedata><tw-passagedata pid="4" name="forest 2" tags="button-yellow" position="1100,300" size="100,100">&lt;% 
+(Action/Special Links are distinguished by a yellow button)
+
+[[Pick it up|forest 2]]</tw-passagedata><tw-passagedata pid="4" name="forest 2" tags="button-yellow" position="1120,150" size="100,100">&lt;% 
 story.config.displayCharacterPanel = true; 
 character.name = &quot; &quot;
 %&gt;
 
 The backpack is empty, but you decide that it would be useful to hold onto it for now.
 
-[[Look around for clues|forest 3]]</tw-passagedata><tw-passagedata pid="5" name="housefront" tags="" position="1393,296" size="100,100">&lt;%
+(You now have an inventory! These are the grid spots on the left)
+
+[[Look around for clues|forest 3]]</tw-passagedata><tw-passagedata pid="5" name="housefront" tags="" position="1284,296" size="100,100">&lt;%
 openDrawers = &quot;false&quot;;
 openFridge = &quot;false&quot;;
 openCabinets = &quot;false&quot;;
@@ -645,18 +671,47 @@ openCabinets = &quot;false&quot;;
 You approach the small wooden house. It looks old and worn but is well-kept. As you walk closer, you notice that the door is slightly open.
 
 [[Walk into the house|houseliving]]
-[[Knock on the door|houseknock]]</tw-passagedata><tw-passagedata pid="6" name="forestmiddle" tags="" position="1316,706" size="200,200">You stand in the middle of the forest.
+[[Knock on the door|houseknock]]</tw-passagedata><tw-passagedata pid="6" name="forestmiddle" tags="" position="2980,1095" size="200,200">You stand in the middle of the forest.
+
+[[Go to shop|shop]]
+[[Ask for quest details|quest]]
 
 [[Walk North|forestnorth]]
 [[Walk East|foresteast]]
 [[Walk South|forestsouth]]
-[[Walk West|forestwest]]</tw-passagedata><tw-passagedata pid="7" name="forestnorth" tags="" position="1273,1001" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="8" name="forestsouth" tags="" position="1678,855" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="9" name="forestwest" tags="" position="1141,776" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="10" name="houseliving" tags="" position="1543,301" size="100,100">You walk into the living room. The crackling fireplace engulfs you in warmth. All of a sudden, you hear a loud bang followed by a scream behind one of the doors, supposedly the bedroom. 
+[[Walk West|forestwest]]</tw-passagedata><tw-passagedata pid="7" name="forestnorth" tags="" position="3362,832" size="100,100">&lt;%if (curQuestTag == &quot;north&quot;) {%&gt;
+(Are you sure you want to begin this quest? The recommended items for this quest is a Fire Sword, 4-5 large potions/scrolls, and 1 or 2 shields)
+
+[[Begin Quest|northStart]]
+
+&lt;%}else{%&gt;
+You decide that you should probably complete your current quest before going here
+&lt;% } %&gt;
+
+[[&lt; Go Back|forestmiddle]]</tw-passagedata><tw-passagedata pid="8" name="forestsouth" tags="" position="3103,1387" size="100,100">&lt;%if (curQuestTag == &quot;south&quot;) {%&gt;
+(Are you sure you want to begin this quest?)
+
+[[Begin Quest|southStart]]
+
+&lt;%}else{%&gt;
+You decide that you should probably complete your current quest before going here.
+&lt;% } %&gt;
+
+[[&lt; Go Back|forestmiddle]]</tw-passagedata><tw-passagedata pid="9" name="forestwest" tags="" position="2832,1219" size="100,100">&lt;%if (curQuestTag == &quot;west&quot;) {%&gt;
+(Are you sure you want to begin this quest? The recommended items for this quest is a sword and a few potions/scrolls)
+
+[[Begin Quest|westStart]]
+&lt;%}else{%&gt;
+You decide that you should probably complete your current quest before proceeding.
+&lt;% } %&gt;
+
+[[&lt; Go Back|forestmiddle]]</tw-passagedata><tw-passagedata pid="10" name="houseliving" tags="" position="1441,231" size="200,200">You walk into the living room. The crackling fireplace engulfs you in warmth. All of a sudden, you hear a loud bang followed by a scream behind one of the doors, supposedly the bedroom. 
 
 [[Investigate the kitchen|housekitchen]]
-[[Check the bedroom|housebedroom]]
-[[Knock on the door|houseknock]]</tw-passagedata><tw-passagedata pid="11" name="houseknock" tags="" position="1457,434" size="100,100">You knock on the door and wait a few seconds. Nobody answers.
+[[Approach the bedroom|housebedroom]]
+[[Knock on the door|houseknock]]</tw-passagedata><tw-passagedata pid="11" name="houseknock" tags="button-yellow" position="1367,472" size="100,100">You knock on the door and wait a few seconds. Nobody answers.
 
-[[Walk into the house|houseliving]]</tw-passagedata><tw-passagedata pid="12" name="forest 3" tags="" position="1248,298" size="100,100">You look around the forest and between the trees, you see a small house in the distance.
+[[Walk into the house|houseliving]]</tw-passagedata><tw-passagedata pid="12" name="forest 3" tags="" position="1284,152" size="100,100">You look around the forest and between the trees, you see a small house in the distance.
 
 [[Approach the house|housefront]]</tw-passagedata><tw-passagedata pid="13" name="housekitchen" tags="" position="1698,235" size="100,100">You are in the kitchen. The chairs are scattered on the floor and the unwashed dishes are piled up. 
 
@@ -676,12 +731,12 @@ You approach the small wooden house. It looks old and worn but is well-kept. As 
 
 
 [[Peep through the keyhole|bedroomPeep]]
-[[Force your way in|bedroomKick]]
+[[Kick down the door|bedroomKick]]
 &lt;% if (character.inventory.hasItem(&quot;dagger&quot;)) { %&gt;
 [[Use your dagger to pry open the door|bedroomDagger]]
 &lt;% } %&gt;
 
-[[&lt; Go back|houseliving]]</tw-passagedata><tw-passagedata pid="15" name="kitchencabinet" tags="" position="1542,96" size="100,100">You open the cabinets and plates fall onto you. You lost some health.
+[[&lt; Go back|houseliving]]</tw-passagedata><tw-passagedata pid="15" name="kitchencabinet" tags="button-yellow" position="1542,96" size="100,100">You open the cabinets and plates fall onto you. You lost some health.
 
 
 &lt;%
@@ -689,47 +744,61 @@ openCabinets = &quot;true&quot;;
 character.damage(2);
 %&gt;
 
-[[&lt; Go Back|housekitchen]]</tw-passagedata><tw-passagedata pid="16" name="kitchenfridge" tags="" position="1676,96" size="100,100">&lt;%
+(Health is indicated by the red bar above your inventory)
+
+[[&lt; Go Back|housekitchen]]</tw-passagedata><tw-passagedata pid="16" name="kitchenfridge" tags="button-yellow" position="1676,96" size="100,100">&lt;%
 openFridge = &quot;true&quot;;
+character.addGold(50);
 %&gt;
 
-You open the fridge but find nothing of use.
+You open the fridge and find 50 gold coins.
 
-[[&lt; Go Back|housekitchen]]</tw-passagedata><tw-passagedata pid="17" name="kitchendrawer" tags="" position="1812,95" size="100,100">&lt;%
+(Gold is displayed under your inventory)
+
+[[&lt; Go Back|housekitchen]]</tw-passagedata><tw-passagedata pid="17" name="kitchendrawer" tags="button-yellow" position="1812,95" size="100,100">&lt;%
 openDrawers = &quot;true&quot;;
 %&gt;
 
 You open the drawers and find some useful items.
 
-(Click and drag into inventory to take)
+(Click and drag the items below into your inventory to take)
 &lt;%
 story.addLootItem(&quot;dagger&quot;);
 story.addLootItem(&quot;small-red-potion&quot;);
 %&gt;
 
-[[&lt; Go Back|housekitchen]]</tw-passagedata><tw-passagedata pid="18" name="bedroomPeep" tags="" position="1915,442" size="100,100">You peep through the keyhole, making out a figure attacking another figure. However, you cannot see much.
+[[&lt; Go Back|housekitchen]]</tw-passagedata><tw-passagedata pid="18" name="bedroomPeep" tags="button-yellow" position="1915,442" size="100,100">You peep through the keyhole, making out a figure attacking another figure. However, you cannot see much. It looks dangerous.
 
-[[&lt; Go Back|housebedroom]]</tw-passagedata><tw-passagedata pid="19" name="bedroomKick" tags="" position="1916,196" size="100,100">You kick down the door successfully and break the lock.
+[[&lt; Go Back|housebedroom]]</tw-passagedata><tw-passagedata pid="19" name="bedroomKick" tags="button-yellow" position="1916,196" size="100,100">&lt;% if(character.inventory.hasItem(&quot;dagger&quot;)) { %&gt;
+You kick down the door successfully and break the lock.
 
-[[Continue|bedroom1]]</tw-passagedata><tw-passagedata pid="20" name="bedroomDagger" tags="button-yellow" position="1917,321" size="100,100">You successfully pry open the door, but your dagger breaks in the process!
+[[Continue|bedroom1]]
+&lt;% }else{ %&gt;
+Your instincts tell you that you should probably look for a weapon before breaking down the door.
+
+[[Continue Anyway|bedroom1]]
+[[&lt; Go Back|housebedroom]]
+
+&lt;% } %&gt;
+</tw-passagedata><tw-passagedata pid="20" name="bedroomDagger" tags="button-yellow" position="1917,321" size="100,100">You successfully pry open the door, but your dagger breaks in the process!
 
 &lt;% character.inventory.removeItem(&quot;dagger&quot;); %&gt;
 
 [[Open the door|bedroom1]]</tw-passagedata><tw-passagedata pid="21" name="bedroom1" tags="" position="2101,396" size="100,100">The screaming stops and the two figures stare at you. One is a man while the other seems to be a goblin-like creature. The goblin-like creature stops attacaking the man and focues its attention to you. It lunges at you with a metal sword.
 
-&lt;% 
-character.inventory.addItem(&quot;dagger&quot;);
-character.inventory.addItem(&quot;red-potion&quot;);
-character.inventory.addItem(&quot;shield&quot;);
-%&gt;
+(Red buttons indicate an imminent combat)
+
 [[Engage combat|playerTurn]]
 
 &lt;%
+demonBattle = &quot;false&quot;;
 nextPassage = &quot;bedroom2&quot;;
 mobName = &quot;Goblin&quot;
 mobHP = 10;
-mobAttack = 2;
-%&gt;</tw-passagedata><tw-passagedata pid="22" name="mobDodge" tags="button-yellow" position="2136.666666666667,1311.6666666666667" size="100,100">&lt;%
+mobAttack = 1;
+mobGold = 50;
+mobLoot = &quot;null&quot;
+%&gt;</tw-passagedata><tw-passagedata pid="22" name="mobDodge" tags="button-yellow" position="1621,1297" size="100,100">&lt;%
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -744,12 +813,12 @@ if(dodge &gt; 0) {
 character.heal(regen);
 %&gt;
 You successfully dodged the attack allowing you to regenerate &lt;%=regen%&gt; HP! 
-[[Continue|PlayerTurn]]
+[[Continue|playerTurn]]
 &lt;% }else{ %&gt;
-You were unsuccessful in defending the attack!
+You were unsuccessful in dodging the attack!
 [[Continue|mobTurn]]
 &lt;% } %&gt;
-</tw-passagedata><tw-passagedata pid="23" name="mobDefend" tags="button-yellow" position="2541.666666666667,1305" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="23" name="mobDefend" tags="button-yellow" position="2026,1291" size="100,100">&lt;%
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -767,7 +836,7 @@ You successfully defended the attack!
 You were unsuccessful in defending the attack!
 [[Continue|mobTurn]]
 &lt;% } %&gt;
-</tw-passagedata><tw-passagedata pid="24" name="mobParry" tags="button-yellow" position="2398.3333333333335,1311.6666666666667" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="24" name="mobParry" tags="button-yellow" position="1883,1297" size="100,100">&lt;%
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -804,7 +873,7 @@ Parry successful! Opponent damage has been decreased to &lt;%=mobAttack%&gt; dam
 Parry unsuccessful!
 &lt;% } %&gt;
 
-[[Continue|mobTurn]]</tw-passagedata><tw-passagedata pid="25" name="mobAttack" tags="theme-metal-red button-yellow" position="2273.3333333333335,1311.6666666666667" size="100,100">&lt;%
+[[Continue|mobTurn]]</tw-passagedata><tw-passagedata pid="25" name="mobAttack" tags="theme-metal-red button-yellow" position="1758,1297" size="100,100">&lt;%
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -814,9 +883,11 @@ function getRandomInt(min, max) {
 
 &lt;%
 if(weapon == &quot;Fire Sword&quot;) {
-damage = getRandomInt(10,20);
+damage = getRandomInt(15,25);
+}else if (weapon == &quot;Fire Axe&quot;) {
+damage = getRandomInt(12,18);
 }else if (weapon == &quot;Sword&quot;) {
-damage = getRandomInt(6,12);;
+damage = getRandomInt(6,12);
 }else if (weapon == &quot;Axe&quot;) {
 damage = getRandomInt(5,8);
 }else if (weapon == &quot;Dagger&quot;) {
@@ -834,7 +905,7 @@ You deal &lt;%=damage%&gt; damage to the enemy using &lt;%=weapon%&gt;
 
 &lt;%if (mobHP &lt;= 0) { %&gt;
 You have successfully defeated the enemy!
-[[continue|&lt;%=nextPassage%&gt;]]
+[[Continue|mobLoot]]
 &lt;% }else{ %&gt;
 [[Continue|mobTurn]]
 &lt;% if (character.inventory.hasItem(&quot;shield&quot;)) { %&gt;
@@ -843,11 +914,16 @@ You have successfully defeated the enemy!
 &lt;% } %&gt;
 
 
-</tw-passagedata><tw-passagedata pid="26" name="bedroom2" tags="" position="2302,398" size="100,100">successfully moved on</tw-passagedata><tw-passagedata pid="27" name="&lt;%=nextPassage%&gt;" tags="" position="2332.666666666667,1552.6666666666667" size="100,100"></tw-passagedata><tw-passagedata pid="28" name="playerTurn" tags="theme-metal-red" position="2248.3333333333335,1036.6666666666667" size="100,100">
+</tw-passagedata><tw-passagedata pid="26" name="bedroom2" tags="theme-rock" position="2302,398" size="100,100">You have just defeated the creature who was attacking the man. The man looks at you with great appreciation: &quot;Thank you so much for saving me!&quot; the man says and asks &quot;But what are you doing here in the woods?&quot;
 
+[[I&#39;m not sure myself. I just woke up in the woods and can&#39;t remember anything.|man1.1]]
+[[Nevermind that, who are you and why am I here?|man1-2]]
+[[To save you of course.|man1.3]]</tw-passagedata><tw-passagedata pid="27" name="&lt;%=nextPassage%&gt;" tags="" position="1918,1446" size="100,100">This is an empty passage meant to direct the player to the next passage of the previous passage the player was in before entering combat. There is a bug if you are seeing this message.</tw-passagedata><tw-passagedata pid="28" name="playerTurn" tags="theme-metal-red button-red" position="1601,989" size="200,200">
 &lt;%
 if(character.inventory.hasItem(&quot;fire-sword&quot;)) {
 weapon = &quot;Fire Sword&quot;;
+}else if (character.inventory.hasItem(&quot;fire-axe&quot;)) {
+weapon = &quot;Fire Axe&quot;;
 }else if (character.inventory.hasItem(&quot;sword&quot;)) {
 weapon = &quot;Sword&quot;;
 }else if (character.inventory.hasItem(&quot;axe&quot;)) {
@@ -855,7 +931,7 @@ weapon = &quot;Axe&quot;;
 }else if (character.inventory.hasItem(&quot;dagger&quot;)) {
 weapon = &quot;Dagger&quot;;
 }else {
-weapon = &quot;none&quot;;
+weapon = &quot;your fists&quot;;
 } 
 %&gt;
 
@@ -869,6 +945,7 @@ It&#39;s your turn:
 if(character.inventory.hasItem(&quot;dagger&quot;)
 || character.inventory.hasItem(&quot;axe&quot;)
 || character.inventory.hasItem(&quot;sword&quot;)
+|| character.inventory.hasItem(&quot;fire-axe&quot;)
 || character.inventory.hasItem(&quot;fire-sword&quot;))
 {
 if (mobAttack &gt; 1) {
@@ -880,24 +957,54 @@ if (mobAttack &gt; 1) {
 &lt;%
 if(character.inventory.hasItem(&quot;small-red-potion&quot;)
 || character.inventory.hasItem(&quot;red-potion&quot;)
-|| character.inventory.hasItem(&quot;big-red-potion&quot;)) { %&gt;
+|| character.inventory.hasItem(&quot;big-red-potion&quot;)) { 
+returnPassage = &quot;playerTurn&quot;;
+%&gt;
 [[Use Potion|playerHeal]]
 &lt;% } %&gt;
 
 
 
 
-</tw-passagedata><tw-passagedata pid="29" name="mobTurn" tags="theme-metal-red" position="2373.3333333333335,1036.6666666666667" size="100,100">The &lt;%=mobName%&gt; has &lt;%=mobHP%&gt; HP.
+</tw-passagedata><tw-passagedata pid="29" name="mobTurn" tags="theme-metal-red" position="1853,984" size="200,200">The &lt;%=mobName%&gt; has &lt;%=mobHP%&gt; HP.
 It&#39;s the &lt;%=mobName%&gt;&#39;s turn!
 
 The &lt;%=mobName%&gt; attacks you for &lt;%=mobAttack%&gt;!
 &lt;% character.damage(mobAttack); %&gt;
 
-&lt;% if (character.health &lt; 0) { %&gt;
-[[You have died!|death]]
+&lt;% if (character.health == 0) { %&gt;
+[[Continue|death]]
 &lt;% }else{ %&gt;
 [[Continue|playerTurn]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="30" name="death" tags="" position="2523.3333333333335,1036.6666666666667" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="31" name="playerHeal" tags="button-green theme-metal-red" position="2086.666666666667,1030" size="100,100">Choose a potion to use to regenerate your health:
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="30" name="death" tags="theme-red" position="1383,748" size="100,100">&lt;% 
+if (character.inventory.hasItem(&quot;scroll&quot;) &amp;&amp; demonBattle == &quot;false&quot;) { 
+character.heal(10);
+character.inventory.removeItem(&quot;scroll&quot;);
+%&gt;
+You have died but the power of the magic scroll revives you!
+[[Revive!|playerTurn]]
+
+&lt;% }else if (character.inventory.hasItem(&quot;scroll&quot;) &amp;&amp; demonBattle == &quot;true&quot;){ 
+character.heal(10);
+character.inventory.removeItem(&quot;scroll&quot;);
+%&gt;
+The demon has killed you, but the power of the magic scroll revives you!
+[[Revive!|demonPlayerTurn]]
+
+&lt;% }else{ %&gt;
+&lt;p style=&quot;font-family: times, serif; font-size:14pt&quot;&gt;
+You have died!
+&lt;/p&gt;
+&lt;p style=&quot;font-family: times, serif; font-size:35pt&quot;&gt;
+Game Over!
+&lt;/p&gt;
+&lt;p style=&quot;font-family: times, serif; font-size:14pt&quot;&gt;
+Thanks for playing!
+&lt;/p&gt;
+[[Restart Game|Credits]]
+&lt;% } %&gt;
+
+&lt;% deathCount++; %&gt;</tw-passagedata><tw-passagedata pid="31" name="playerHeal" tags="button-green theme-metal-green" position="1425,1083" size="100,100">Choose a potion to use to regenerate your health:
 
 &lt;% if(character.inventory.hasItem(&quot;small-red-potion&quot;)) { %&gt;
 [[Small Potion (Regenerates 25% of HP) |healSmall]]
@@ -911,7 +1018,7 @@ The &lt;%=mobName%&gt; attacks you for &lt;%=mobAttack%&gt;!
 [[Large Potion (Regenerates 75% of HP) |healLarge]]
 &lt;% } %&gt;
 
-[[Nevermind|playerTurn]] </tw-passagedata><tw-passagedata pid="32" name="healSmall" tags="button-yellow theme-metal-green" position="1900.9999999999998,1141" size="100,100">You used a small potion and healed 5 HP!
+[[Nevermind|&lt;%=returnPassage%&gt;]]</tw-passagedata><tw-passagedata pid="32" name="healSmall" tags="button-yellow theme-metal-green" position="1230,1196" size="100,100">You used a small potion and healed 5 HP!
 
 &lt;% 
 character.inventory.removeItem(&quot;small-red-potion&quot;);
@@ -922,28 +1029,859 @@ character.health = 20;
 }
 %&gt;
 
-[[Return|playerTurn]]
+[[Return|&lt;%=returnPassage%&gt;]]
 
-</tw-passagedata><tw-passagedata pid="33" name="healMedium" tags="button-yellow theme-metal-green" position="1899.9999999999998,1025.0000000000002" size="100,100">You used a medium potion and healed 10 HP!
+</tw-passagedata><tw-passagedata pid="33" name="healMedium" tags="button-yellow theme-metal-green" position="1233,1078" size="100,100">You used a medium potion and healed 10 HP!
 
 &lt;% 
 character.inventory.removeItem(&quot;red-potion&quot;);
 character.heal(10)
 %&gt;
 
-[[Return|playerTurn]]
+[[Return|&lt;%=returnPassage%&gt;]]
 
-</tw-passagedata><tw-passagedata pid="34" name="healLarge" tags="button-yellow theme-metal-green" position="1901.6666666666665,910.0000000000002" size="100,100">You used a large potion and healed 15 HP!
+</tw-passagedata><tw-passagedata pid="34" name="healLarge" tags="button-yellow theme-metal-green" position="1243,954" size="100,100">You used a large potion and healed 15 HP!
 
 &lt;% 
 character.inventory.removeItem(&quot;big-red-potion&quot;);
 character.heal(15)
+%&gt;
+
+[[Return|&lt;%=returnPassage%&gt;]]
+
+</tw-passagedata><tw-passagedata pid="35" name="mobLoot" tags="" position="1752,1447" size="100,100">&lt;% if(mobGold &gt; 0){ %&gt;
+You acquired &lt;%=mobGold%&gt; gold.
+&lt;% character.addGold(mobGold); }else{%&gt;
+The mob did not drop any gold
+&lt;% } %&gt;
+
+&lt;%
+if(mobLoot != &quot;null&quot;) {
+story.addLootItem(mobLoot);
+%&gt;
+The &lt;%=mobName%&gt; dropped some loot:
+
+&lt;% } %&gt;
+
+&lt;% monstersKilled++;%&gt;
+
+[[Complete|&lt;%=nextPassage%&gt;]]</tw-passagedata><tw-passagedata pid="36" name="man1.1" tags="button-white theme-rock" position="2462,259" size="100,100">&quot;Well my name is Elliot, what&#39;s yours?&quot;
+
+&lt;i&gt; (Please enter your desired name) &lt;/i&gt;
+
+&lt;p&gt; &lt;input onchange= &quot;character.name = this.value&quot;&gt; &lt;/p&gt;
+
+[[Continue|man2]]
+</tw-passagedata><tw-passagedata pid="37" name="man1-2" tags="button-white theme-rock" position="2462,384" size="100,100">The man says &quot;My name is Elliot, this is my house in the woods far from the town. And you are...?
+
+&lt;i&gt; (Please enter your desired name) &lt;/i&gt;
+
+&lt;p&gt; &lt;input onchange= &quot;character.name = this.value&quot;&gt; &lt;/p&gt;
+
+[[Continue|man2]]
+</tw-passagedata><tw-passagedata pid="38" name="man1.3" tags="button-white theme-rock" position="2465,511" size="100,100">The man replies &quot;Thanks for saving me! My name is Elliot, and you are...?&quot;
+
+&lt;i&gt; (Please enter your desired name) &lt;/i&gt;
+
+&lt;p&gt; &lt;input onchange= &quot;character.name = this.value&quot;&gt; &lt;/p&gt;
+
+[[Continue|man2]]
+</tw-passagedata><tw-passagedata pid="39" name="man2" tags="theme-rock" position="2617,389" size="100,100">He replies &quot;Nice to meet you &lt;%=character.name%&gt;. I&#39;m a blacksmith and I make weapons and armor but i&#39;ve fled the town from the major invasion to my cabin here in the woods. I thought that I would be able to escape from those creatures but it doesn&#39;t seem like the case anymore...&quot;
+
+[[Major invasion? What are you talking about?|man3]]
+[[Who are these creatures and what is this invasion?|man3]]</tw-passagedata><tw-passagedata pid="40" name="man3" tags="button-white theme-rock" position="2760,391" size="100,100">&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+//following list of names is credited to fatasynamegenerator.com
+townList = [&quot;Palperroth&quot;,&quot;Garigill&quot;,&quot;Erstonia&quot;,&quot;Rutherglen&quot;,&quot;Myrefall&quot;,&quot;Goldcrest&quot;,&quot;Willsden&quot;,&quot;Lindow&quot;,&quot;Braedon&quot;,&quot;Northbury&quot;];
+demonList = [&quot;Jegrenok&quot;,&quot;Sostron&quot;,&quot;Gagmethak&quot;,&quot;Muzalaath&quot;,&quot;Kor&#39;giruth&quot;,&quot;Bozgaran&quot;,&quot;Xokemaath&quot;,&quot;Anozil&quot;,&quot;Kozzuran&quot;,&quot;Thagraz&quot;]
+townName = townList[getRandomInt(0,10)];
+demonName = townList[getRandomInt(0,10)];
+%&gt;
+
+
+He replies &quot;Have you been living under a rock? The major town called &lt;font color=&quot;red&quot;&gt;&lt;%=townName%&gt;&lt;/font&gt; is under invasion by the collaboration of creatures ranging from goblins and skeletons to barbarians and giants under the influence of the demon &lt;font color=&quot;red&quot;&gt;&lt;%=demonName%&gt;&lt;/font&gt;. The whole town is trying to fight back but it&#39;s not looking good. I decided to escape the town before it was too late for me, but you seem like you may be able to save the town...&quot;
+
+[[Woah hold on, I still don&#39;t know why I am here or who I really am.|man3-1]]
+[[I think I&#39;ll need some gear first.|man4]]
+[[No thanks|jokeEnd1]]</tw-passagedata><tw-passagedata pid="41" name="man3-1" tags="button-white theme-rock" position="2897,389" size="100,100">I&#39;ve never seen someone defeat a goblin so swiftly and easily like you just did. You have some serious talent for combat against these creatures. Also, if you defeat the Archdemon, you&#39;ll be known as a hero of &lt;%=townName%&gt; for the rest of eternity. Trust me, I belive you can do it.
+
+
+[[Okay but I think I&#39;ll need some gear first.|man4]]</tw-passagedata><tw-passagedata pid="42" name="man4" tags="button-white theme-rock" position="2828,549" size="100,100">Of course! Take these to help you defeat the enemies. However, be careful with the magic imbued scroll, it is capable of bringing you back to life so only use it when necessary.
+&lt;%
+story.addLootItem(&quot;red-potion&quot;);
+story.addLootItem(&quot;red-potion&quot;);
+story.addLootItem(&quot;scroll&quot;);
+story.addLootItem(&quot;axe&quot;);
+%&gt;
+
+[[Continue|man5]]</tw-passagedata><tw-passagedata pid="43" name="man5" tags="theme-rock" position="2970,551" size="100,100">&lt;% 
+curQuest = &quot;Defeat all the goblins and destroy the armory directly south of the forest&quot;;
+curQuestTag = &quot;south&quot;;
+%&gt;
+
+Great! Now for your first quest, you must defeat all the goblins directly south of this forest. I&#39;ve mapped it out and it seems that it is their armory. If you get rid of that we can slow the invasion down. You can report back to me once you have finished that. Also, you can talk to me to buy extra gear or to get information about your quest. Good Luck!
+
+[[Accept Quest|forestmiddle]]</tw-passagedata><tw-passagedata pid="44" name="foresteast" tags="" position="3252,1193" size="100,100">&lt;%if (curQuestTag == &quot;east&quot;) {%&gt;
+(Are you sure you want to begin this quest? The recommended items for this quest is a Fire Axe, a few large potions/scrolls, and a shield)
+
+[[Begin Quest|eastStart]]
+
+&lt;%}else{%&gt;
+You decide that you should probably complete your current quest before going here.
+&lt;% } %&gt;
+
+[[&lt; Go Back|forestmiddle]]</tw-passagedata><tw-passagedata pid="45" name="shop" tags="" position="2969,687" size="100,100">You go to Elliot&#39;s shop. He asks &quot;What can I get for you?&quot;
+
+&lt;%
+story.addShopItem(&quot;small-red-potion&quot;, 100);
+story.addShopItem(&quot;red-potion&quot;, 200);
+story.addShopItem(&quot;big-red-potion&quot;, 400);
+story.addShopItem(&quot;scroll&quot;,1500);
+story.addShopItem(&quot;shield&quot;,1000);
+if(!character.inventory.hasItem(&quot;sword&quot;)){
+story.addShopItem(&quot;sword&quot;, 500);
+}
+if(!character.inventory.hasItem(&quot;fire-axe&quot;)){
+story.addShopItem(&quot;fire-axe&quot;, 1000);
+}
+if(!character.inventory.hasItem(&quot;fire-sword&quot;)){
+story.addShopItem(&quot;fire-sword&quot;, 2000);
 }
 %&gt;
 
-[[Return|playerTurn]]
+[[Ask about item stats|shopinfo]]
+[[&lt; Go Back|forestmiddle]]</tw-passagedata><tw-passagedata pid="46" name="quest" tags="" position="2834,690" size="100,100">You ask Elliot to repeat the details to the quest. He says: &lt;%=curQuest%&gt;.
 
-</tw-passagedata><tw-passagedata pid="35" name="PlayerTurn" tags="" position="2136.666666666667,1461.6666666666667" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+[[&lt; Go Back|forestmiddle]]</tw-passagedata><tw-passagedata pid="47" name="southStart" tags="" position="3120,1540" size="100,100">You head towards the goblin-infested armory down south. As you move south, the forest becomes more dense. Soon, you are unable to see more than a few meters in front of you.
+
+&lt;% 
+completion = 0;
+treasureCount = 0;
+%&gt;
+
+[[Continue|southMain]]</tw-passagedata><tw-passagedata pid="48" name="southMain" tags="" position="2995,1702" size="200,200">&lt;% if(completion &gt;= 100) { %&gt;
+You have completed this quest!
+[[Return to Elliot|southQuestComplete]]
+&lt;% }else{%&gt;
+This quest is &lt;%=completion%&gt;% complete.
+
+&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+if(treasureCount &gt; 3) {
+nodes = [&quot;enemy&quot;,&quot;enemy&quot;,&quot;enemy&quot;,&quot;trappedTreasure&quot;,&quot;armory&quot;];
+} else {
+nodes = [&quot;enemy&quot;,&quot;enemy&quot;,&quot;enemy&quot;,&quot;treasure&quot;,&quot;trappedTreasure&quot;,&quot;armory&quot;];
+}
+randomNode = nodes[getRandomInt(0, nodes.length)];
+
+if(randomNode == &quot;enemy&quot;) { %&gt;
+[[Continue Quest|southMob]]
+&lt;% }else if(randomNode == &quot;treasure&quot;) { %&gt;
+[[Continue Quest|southTreasure]]
+&lt;% }else if(randomNode == &quot;trappedTreasure&quot;) { %&gt;
+[[Continue Quest|SouthTrappedTreasure]]
+&lt;% }else if(randomNode == &quot;armory&quot;) { %&gt;
+[[Continue Quest|armory]]
+&lt;% }} %&gt;
+
+
+
+&lt;%
+if(character.inventory.hasItem(&quot;small-red-potion&quot;)
+|| character.inventory.hasItem(&quot;red-potion&quot;)
+|| character.inventory.hasItem(&quot;big-red-potion&quot;)) { 
+returnPassage = &quot;southMain&quot;;
+%&gt;
+[[Use Potion|playerHeal]]
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="49" name="&lt;%=returnPassage%&gt;" tags="" position="1075,1086" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="50" name="southMob" tags="" position="2980,1963" size="100,100">&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+%&gt;
+
+You encountered an enemy!
+
+&lt;%
+nextPassage = &quot;southMain&quot;;
+mobName = &quot;Goblin&quot;;
+mobHP = getRandomInt(10,16);
+mobAttack = getRandomInt(1,3);
+mobGold = getRandomInt(0,3) * 50;
+mobLoot = &quot;null&quot;; 
+
+completion = completion + 10;
+%&gt;
+
+[[Engage Combat|playerTurn]]</tw-passagedata><tw-passagedata pid="51" name="southTreasure" tags="" position="2830,1959" size="100,100">You found a supply stash inside the armory!
+
+&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+items = [&quot;small-red-potion&quot;,&quot;small-red-potion&quot;,&quot;small-red-potion&quot;,&quot;red-potion&quot;,&quot;red-potion&quot;,&quot;red-potion&quot;,&quot;big-red-potion&quot;,&quot;scroll&quot;,&quot;shield&quot;,&quot;fire-axe&quot;];
+randomItem = items[getRandomInt(0, items.length)];
+
+story.addLootItem(randomItem);
+story.addLootItem(randomItem);
+
+treasureCount++;
+completion = completion + 10;
+%&gt;
+
+[[&lt; Go Back|southMain]]</tw-passagedata><tw-passagedata pid="52" name="armory" tags="" position="3127,1960" size="100,100">You found an armor stash kept by the goblins!
+However, it is too small for you to equip.
+&lt;% completion = completion + 10; %&gt;
+
+[[Destroy it|southMain]]</tw-passagedata><tw-passagedata pid="53" name="SouthTrappedTreasure" tags="" position="3283,1960" size="100,100">You found a treasure room! As you open the treasure, however, you realize that it is a trap and you are ambushed.
+
+[[Engage Combat|southMob]]</tw-passagedata><tw-passagedata pid="54" name="southQuestComplete" tags="theme-rock" position="2987,1537" size="100,100">You return to Elliot and tell him that you have destroyed the goblin armory. He congratulates you: &quot;Great job on defeating the armory down south, that was way quicker than I had expected. I was right about you having a special ability at eliminating these creatures.&quot; &lt;/br&gt;
+&lt;/br&gt;
+Well, it is no time for celebration. I&#39;ve just scouted the skeleton army&#39;s next convoy thats headed towards the town. Im sure if you destroy the convoy, the skeletons will have to back down because this is their biggest convoy yet. You think you can defeat them?
+
+[[Piece of cake.|westQuestInit]]
+[[I think I can manage.|westQuestInit]]</tw-passagedata><tw-passagedata pid="55" name="shopinfo" tags="" position="3122,689" size="100,100">Elliot hands you a list with all the statistics on the items he has in store. The list reads:
+
+[[&lt; Go Back|shop]]
+
+&lt;p style=&quot;font-family: times, serif; font-size:10pt; font-style:bold&quot;&gt;
+Small Potion - Regenerates 25% of health&lt;br/&gt;
+Medium Potion - Regenerates 50% of health&lt;br/&gt;
+Large Potion - Regenerates 75% of health&lt;br/&gt;
+Resurrection Scroll - Resurrects the holder after death, one time use.&lt;br/&gt;
+Shield - Allows the wielder to block attacks. May break after use.&lt;br/&gt;
+Sword - Standard sword with acceptable damage.&lt;br/&gt;
+Fire Axe - A fire infused axe with high damage.&lt;br/&gt;
+Fire Sword - A fire infused sword with phenomenal damage.&lt;br/&gt;
+&lt;/p&gt;</tw-passagedata><tw-passagedata pid="56" name="westQuestInit" tags="theme-rock button-white" position="2984,1389" size="100,100">
+
+Great! They are located west of the forest, try to burn down their weapons and vehicles. Be careful though, they may be fragile but they are deadly. Here are a few things that might help you:
+
+(You have been given 200 gold!)
+
+&lt;% 
+curQuest = &quot;Destroy the skeleton convoy west of the forest by burning down their weapons and vehicles. Eliminate all skeletons.&quot;;
+curQuestTag = &quot;west&quot;;
+
+character.addGold(200);
+story.addLootItem(&quot;red-potion&quot;);
+story.addLootItem(&quot;red-potion&quot;);
+%&gt;
+
+[[Accept Quest|forestmiddle]]
+</tw-passagedata><tw-passagedata pid="57" name="westStart" tags="" position="2703,1216" size="100,100">You head towards the skeleton convoy west of the forest. The sky is starting to turn dark.
+
+&lt;% 
+completion = 0;
+treasureCount = 0;
+%&gt;
+
+[[Continue|westMain]]</tw-passagedata><tw-passagedata pid="58" name="westMain" tags="" position="2465,1114" size="200,200">&lt;% if(completion &gt;= 100) { %&gt;
+You have completed this quest!
+[[Return to Elliot|westQuestComplete]]
+&lt;% }else{%&gt;
+This quest is &lt;%=completion%&gt;% complete.
+
+&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+if(treasureCount &gt; 3) {
+nodes = [&quot;enemy&quot;,&quot;enemy&quot;,&quot;enemy&quot;,&quot;ambush&quot;,&quot;convoy&quot;];
+} else {
+nodes = [&quot;enemy&quot;,&quot;enemy&quot;,&quot;enemy&quot;,&quot;treasure&quot;,&quot;ambush&quot;,&quot;convoy&quot;];
+}
+randomNode = nodes[getRandomInt(0, nodes.length)];
+
+if(randomNode == &quot;enemy&quot;) { %&gt;
+[[Continue Quest|westMob]]
+&lt;% }else if(randomNode == &quot;treasure&quot;) { %&gt;
+[[Continue Quest|westTreasure]]
+&lt;% }else if(randomNode == &quot;ambush&quot;) { %&gt;
+[[Continue Quest|westAmbush]]
+&lt;% }else if(randomNode == &quot;convoy&quot;) { %&gt;
+[[Continue Quest|convoy]]
+&lt;% }} %&gt;
+
+
+
+&lt;%
+if(character.inventory.hasItem(&quot;small-red-potion&quot;)
+|| character.inventory.hasItem(&quot;red-potion&quot;)
+|| character.inventory.hasItem(&quot;big-red-potion&quot;)) { 
+returnPassage = &quot;westMain&quot;;
+%&gt;
+[[Use Potion|playerHeal]]
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="59" name="westMob" tags="" position="2299,1096" size="100,100">&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+%&gt;
+
+You encountered an enemy!
+
+&lt;%
+nextPassage = &quot;westMain&quot;;
+mobName = &quot;Skeleton&quot;;
+mobHP = getRandomInt(6,10);
+mobAttack = getRandomInt(3,6);
+mobGold = getRandomInt(0,4) * 50;
+mobLoot = &quot;null&quot;; 
+
+completion = completion + 10;
+%&gt;
+
+[[Engage Combat|playerTurn]]</tw-passagedata><tw-passagedata pid="60" name="westTreasure" tags="" position="2300,949" size="100,100">You found a supply stash inside the convoy!
+
+&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+items = [&quot;small-red-potion&quot;,&quot;small-red-potion&quot;,&quot;small-red-potion&quot;,&quot;red-potion&quot;,&quot;red-potion&quot;,&quot;red-potion&quot;,&quot;red-potion&quot;,&quot;big-red-potion&quot;,&quot;big-red-potion&quot;,&quot;big-red-potion&quot;,&quot;big-red-potion&quot;,&quot;scroll&quot;,&quot;shield&quot;,&quot;fire-axe&quot;];
+randomItem = items[getRandomInt(0, items.length)];
+
+story.addLootItem(randomItem);
+story.addLootItem(randomItem);
+
+treasureCount++;
+completion = completion + 10;
+%&gt;
+
+[[&lt; Go Back|westMain]]</tw-passagedata><tw-passagedata pid="61" name="convoy" tags="" position="2299,1369" size="100,100">You found a vehicle used by the skeleton army!
+&lt;% completion = completion + 10; %&gt;
+
+[[Burn it|westMain]]</tw-passagedata><tw-passagedata pid="62" name="westAmbush" tags="" position="2297,1224" size="100,100">Your location was exposed and you are amubshed!
+
+[[Engage Combat|westMob]]</tw-passagedata><tw-passagedata pid="63" name="westQuestComplete" tags="theme-rock" position="2704,1096" size="100,100">You return to Elliot and tell him that you have destroyed skeleton army&#39;s convoy. He is surprised: &quot;I thought you would have difficulty with that one but you seem completely fine. Your skills are amazing. At this rate, you&#39;ll be able to eliminate &lt;%=demonName%&gt; the demon and save the town in no time. &lt;/br&gt;
+&lt;/br&gt;
+Since you have eliminated the goblins and the skeletons, there are only one main army left. These are the barbarians loated east. Think you can destroy their headquarters?&quot;
+
+[[Of course.|eastQuestInit]]
+[[I think I can manage.|eastQuestInit]]</tw-passagedata><tw-passagedata pid="64" name="eastQuestInit" tags="" position="2834,1096" size="100,100">
+
+I&#39;d expect no less from the legendary &lt;%=character.name%&gt;. As always, they are located east of the forest, try to destroy their communications and plans. I would advise you to be extra careful, barbarians are not only highly armored, but they are also lethal if you make the wrong move.
+Here are a few more things that might help you:
+
+(You have been given 500 gold!)
+
+&lt;% 
+curQuest = &quot;Destroy and eliminate all barbarians in the barbarian headquarters east of the forest.&quot;;
+curQuestTag = &quot;east&quot;;
+
+character.addGold(500);
+story.addLootItem(&quot;big-red-potion&quot;);
+story.addLootItem(&quot;scroll&quot;);
+%&gt;
+
+[[Accept Quest|forestmiddle]]
+</tw-passagedata><tw-passagedata pid="65" name="eastStart" tags="" position="3388,1193" size="100,100">You head towards the barbarians headquarter due east. The darkness engulfs the sky as the night begins.
+
+&lt;% 
+completion = 0;
+treasureCount = 0;
+%&gt;
+
+[[Continue|eastMain]]</tw-passagedata><tw-passagedata pid="66" name="eastMain" tags="" position="3557,1095" size="200,200">&lt;% if(completion &gt;= 100) { %&gt;
+You have completed this quest!
+[[Return to Elliot|eastQuestComplete]]
+&lt;% }else{%&gt;
+This quest is &lt;%=completion%&gt;% complete.
+
+&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+if(treasureCount &gt; 3) {
+nodes = [&quot;enemy&quot;,&quot;enemy&quot;,&quot;enemy&quot;,&quot;chase&quot;,&quot;plans&quot;];
+} else {
+nodes = [&quot;enemy&quot;,&quot;enemy&quot;,&quot;enemy&quot;,&quot;treasure&quot;,&quot;chase&quot;,&quot;plans&quot;];
+}
+randomNode = nodes[getRandomInt(0, nodes.length)];
+
+if(randomNode == &quot;enemy&quot;) { %&gt;
+[[Continue Quest|eastMob]]
+&lt;% }else if(randomNode == &quot;treasure&quot;) { %&gt;
+[[Continue Quest|eastTreasure]]
+&lt;% }else if(randomNode == &quot;chase&quot;) { %&gt;
+[[Continue Quest|chase]]
+&lt;% }else if(randomNode == &quot;plans&quot;) { %&gt;
+[[Continue Quest|plans]]
+&lt;% }} %&gt;
+
+
+
+&lt;%
+if(character.inventory.hasItem(&quot;small-red-potion&quot;)
+|| character.inventory.hasItem(&quot;red-potion&quot;)
+|| character.inventory.hasItem(&quot;big-red-potion&quot;)) { 
+returnPassage = &quot;eastMain&quot;;
+%&gt;
+[[Use Potion|playerHeal]]
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="67" name="eastQuestComplete" tags="" position="3387,1066.3333333333333" size="100,100">You return to Elliot and tell him that you have destroyed the barbarian headquarters. He says &quot;Great work. I&#39;ve checked out the battlefield and your work has allowed the town to recover and fight back.&quot; &lt;/br&gt;
+&lt;/br&gt;
+However, it isn&#39;t enough. It seems that &lt;%=demonName%&gt; has been working on his latest plan to wipe out the town. I think it&#39;s time for you to take him on.
+
+[[I think I might need some gear first|northQuestInit]]
+[[I&#39;m not sure that I can defeat him but I&#39;ll try|northQuestInit]]</tw-passagedata><tw-passagedata pid="68" name="eastMob" tags="" position="3820,1364" size="100,100">&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+%&gt;
+
+You encountered an enemy!
+
+&lt;%
+nextPassage = &quot;eastMain&quot;;
+mobName = &quot;Barbarian&quot;;
+mobHP = getRandomInt(15,25);
+mobAttack = getRandomInt(3,6);
+mobGold = getRandomInt(0,6) * 50;
+mobLoot = &quot;null&quot;; 
+
+completion = completion + 10;
+%&gt;
+
+[[Engage Combat|playerTurn]]</tw-passagedata><tw-passagedata pid="69" name="eastTreasure" tags="" position="3818,1107" size="100,100">You found a supply stash inside the armory!
+
+&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+items = [&quot;red-potion&quot;,&quot;red-potion&quot;,&quot;big-red-potion&quot;,&quot;big-red-potion&quot;,&quot;big-red-potion&quot;,&quot;big-red-potion&quot;,&quot;scroll&quot;,&quot;scroll&quot;,&quot;shield&quot;,&quot;shield&quot;,&quot;fire-sword&quot;];
+randomItem = items[getRandomInt(0, items.length)];
+
+story.addLootItem(randomItem);
+story.addLootItem(randomItem);
+
+treasureCount++;
+completion = completion + 10;
+%&gt;
+
+[[&lt; Go Back|eastMain]]</tw-passagedata><tw-passagedata pid="70" name="chase" tags="" position="3815,1230" size="100,100">The barbarians found you sneaking in their headquarters!
+
+[[Engage Combat|eastMob]]</tw-passagedata><tw-passagedata pid="71" name="plans" tags="" position="3818,973" size="100,100">You found their communications room! Their plans are scattered on tables and war strategies are marked all over the room.
+&lt;% completion = completion + 10; %&gt;
+
+[[Destroy plans|eastMain]]</tw-passagedata><tw-passagedata pid="72" name="northQuestInit" tags="" position="3250,1072" size="100,100">Okay. The demon&#39;s exact whereabouts are unknown but it is sure he is up north somewhere mountain within the &lt;%=townName%&gt; mountain. I&#39;ve narrowed it down to three locations: He could be on the summit of &lt;%=townName%&gt; mountain, in the ravines next to that mountain, or inside major cave system. To get to any of these locations however, you have to get through the northern valley that seems to be infested with goblins, skeletons, and barbarians.
+&lt;/br&gt;
+&lt;/br&gt;
+If you defeat him, you will be known as the hero of &lt;%=townName%&gt;. You&#39;ve come this far, you must defeat him now. As always, these are some items to help you. Make sure you are fully geared before you begin this quest.
+
+(You have been given 1000 gold!)
+
+&lt;% 
+curQuest = &quot;Make your way through the northern valley, find the location of the demon and eliminate him.&quot;;
+curQuestTag = &quot;north&quot;;
+
+character.addGold(1000);
+story.addLootItem(&quot;big-red-potion&quot;);
+story.addLootItem(&quot;scroll&quot;);
+story.addLootItem(&quot;fire-axe&quot;);
+%&gt;
+
+[[Accept Quest|forestmiddle]]
+</tw-passagedata><tw-passagedata pid="73" name="northStart" tags="" position="3509,828" size="100,100">You begin walking north towards the northern valley. The color of the sky turns into a red color, similar to that of blood. It begins raining.
+
+&lt;% 
+completion = 0;
+treasureCount = 0;
+%&gt;
+
+[[Continue|valleyMain]]</tw-passagedata><tw-passagedata pid="74" name="valleyMain" tags="" position="3457,587" size="200,200">&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+locations = [&quot;summit&quot;,&quot;ravine&quot;,&quot;cave&quot;];
+demonLocation = locations[getRandomInt(0, locations.length)];
+%&gt;
+
+&lt;% if(completion &gt;= 100) {%&gt;
+You have completed traversing the northern valley!
+[[Continue|valleyComplete]]
+&lt;%
+summitSearched = &quot;false&quot;;
+ravineSearched = &quot;false&quot;;
+caveSearched = &quot;false&quot;;
+%&gt;
+
+&lt;% }else{%&gt;
+You have crossed &lt;%=completion%&gt;% of the northern valley.
+
+[[Continue Traversing Valley|valleyMob]]
+
+&lt;%}%&gt;
+
+
+&lt;%
+if(character.inventory.hasItem(&quot;small-red-potion&quot;)
+|| character.inventory.hasItem(&quot;red-potion&quot;)
+|| character.inventory.hasItem(&quot;big-red-potion&quot;)) { 
+returnPassage = &quot;southMain&quot;;
+%&gt;
+[[Use Potion|playerHeal]]
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="75" name="valleyComplete" tags="" position="3502,403" size="100,100">You stand at the base of the moutain.
+
+
+&lt;%if(summitSearched == &quot;false&quot;){%&gt;[[Head to the summit|mtSummit]]&lt;%}%&gt;
+&lt;%if(caveSearched == &quot;false&quot;){%&gt;[[Head inside the caves|mtCaves]]&lt;%}%&gt;
+&lt;%if(ravineSearched == &quot;false&quot;){%&gt;[[Head to the ravines|mtRavines]]&lt;%}%&gt;</tw-passagedata><tw-passagedata pid="76" name="valleyMob" tags="" position="3738,643" size="100,100">You encountered an enemy!
+
+&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+enemies = [&quot;Goblin&quot;,&quot;Skeleton&quot;,&quot;Barbarian&quot;];
+randomEnemy = enemies[getRandomInt(0, enemies.length)];
+
+
+nextPassage = &quot;valleyMain&quot;;
+mobName = randomEnemy;
+mobGold = getRandomInt(0,5) * 50;
+mobLoot = &quot;null&quot;; 
+
+if(randomEnemy == &quot;Goblin&quot;) {
+mobHP = getRandomInt(10,16);
+mobAttack = getRandomInt(1,5);
+} else if (randomEnemy == &quot;Skeleton&quot;){
+mobHP = getRandomInt(6,10);
+mobAttack = getRandomInt(4,9);
+} else if (randomEnemy == &quot;Barbarian&quot;){
+mobHP = getRandomInt(15,25);
+mobAttack = getRandomInt(4,9);
+}
+
+completion = completion + 20;
+%&gt;
+
+[[Engage Combat|playerTurn]]</tw-passagedata><tw-passagedata pid="77" name="mtSummit" tags="" position="3698,145" size="100,100">You begin to head up the mountain. As you continue to climb higher and higer, you see a figure at the top.
+
+&lt;% if(demonLocation == &quot;summit&quot;) {%&gt;
+[[Investigate figure|demonSpotted]]
+&lt;%}else{
+prevLocation = &quot;Summit&quot;;
+%&gt;
+[[Investigate figure|mobSpotted]]
+&lt;%}%&gt;
+
+[[&lt; Go Back|valleyComplete]]</tw-passagedata><tw-passagedata pid="78" name="mtCaves" tags="" position="3694,290" size="100,100">You head into the cave system inside the mountain. It becomes very dark and cold. As you head further down the caves, you hear some noises.
+
+&lt;% if(demonLocation == &quot;cave&quot;) {%&gt;
+[[Investigate noises|demonSpotted]]
+&lt;%}else{
+prevLocation = &quot;Cave&quot;;
+%&gt;
+[[Investigate noises|mobSpotted]]
+&lt;%}%&gt;
+
+[[&lt; Go Back|valleyComplete]]</tw-passagedata><tw-passagedata pid="79" name="mtRavines" tags="" position="3695,430" size="100,100">You head into the ravine located next to the mountain. It becomes very dark and cold. As you head further down, you hear some noises.
+
+&lt;% if(demonLocation == &quot;ravines&quot;) {%&gt;
+[[Investigate noises|demonSpotted]]
+&lt;%}else{
+prevLocation = &quot;Ravine&quot;;
+%&gt;
+[[Investigate noises|mobSpotted]]
+&lt;%}%&gt;
+
+[[&lt; Go Back|valleyComplete]]</tw-passagedata><tw-passagedata pid="80" name="demonSpotted" tags="" position="3975,353" size="100,100">You have spotted the demon!
+
+[[Approach him|demon1]]</tw-passagedata><tw-passagedata pid="81" name="mobSpotted" tags="" position="3978,210" size="100,100">&lt;% 
+if(prevLocation == &quot;Ravine&quot;) {
+ravineSearched = &quot;true&quot;; 
+}else if(prevLocation == &quot;Cave&quot;) {
+caveSearched = &quot;true&quot;;
+}else if(prevLocation == &quot;Summit&quot;) {
+summitSearched = &quot;true&quot;;
+}
+%&gt;
+
+It doesn&#39;t seem to be the demon... &lt;/br&gt;
+You encountered an enemy!
+
+&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+enemies = [&quot;Goblin&quot;,&quot;Skeleton&quot;,&quot;Barbarian&quot;];
+randomEnemy = enemies[getRandomInt(0, enemies.length)];
+
+
+nextPassage = &quot;valleyComplete&quot;;
+mobName = randomEnemy;
+mobGold = getRandomInt(0,5) * 50;
+mobLoot = &quot;null&quot;; 
+
+if(randomEnemy == &quot;Goblin&quot;) {
+mobHP = getRandomInt(10,16);
+mobAttack = getRandomInt(1,5);
+} else if (randomEnemy == &quot;Skeleton&quot;){
+mobHP = getRandomInt(6,10);
+mobAttack = getRandomInt(4,9);
+} else if (randomEnemy == &quot;Barbarian&quot;){
+mobHP = getRandomInt(15,25);
+mobAttack = getRandomInt(4,9);
+}
+%&gt;
+
+[[Engage Combat|playerTurn]]</tw-passagedata><tw-passagedata pid="82" name="demon1" tags="theme-frame-dark button-black" position="4110,274" size="100,100">&lt;font color=&quot;#8c42f4&quot;&gt;
+Wielding your blood-soaked weapons, you walk up to the demon who turns around to face you. He begins emitting a dark purple aura around himself.
+&lt;/font&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+You ask him...
+
+[[&quot;Why are you invading an innocent town?&quot;|demon2]]
+[[&quot;Who am I and why am I here in this world?&quot;|demon2]]
+[[&quot;Are you ready to die?&quot;|demon2]]
+
+</tw-passagedata><tw-passagedata pid="83" name="demon2" tags="theme-frame-dark button-white" position="4239,277" size="100,100">&lt;font color=&quot;#8c42f4&quot;&gt;
+You wait a few seconds but he does not respond. The purple aura that he was emitting earlier now concentrates at his arms, wrapping around it. At its most concentrated point, the aura begins to form a sword. 
+&lt;/font&gt;
+
+&lt;%
+demonBattle = &quot;true&quot;;
+mobName = &quot;Demon&quot;;
+mobHP = 150;
+mobAttack = 5;
+demonDodged = &quot;false&quot;;
+demonParried = &quot;false&quot;;
+%&gt;
+
+[[Engage Combat|demonPlayerTurn]]</tw-passagedata><tw-passagedata pid="84" name="demonPlayerTurn" tags="theme-frame-dark button-red" position="4373,209" size="200,200">&lt;%
+if(character.inventory.hasItem(&quot;fire-sword&quot;)) {
+weapon = &quot;Fire Sword&quot;;
+}else if (character.inventory.hasItem(&quot;fire-axe&quot;)) {
+weapon = &quot;Fire Axe&quot;;
+}else if (character.inventory.hasItem(&quot;sword&quot;)) {
+weapon = &quot;Sword&quot;;
+}else if (character.inventory.hasItem(&quot;axe&quot;)) {
+weapon = &quot;Axe&quot;;
+}else if (character.inventory.hasItem(&quot;dagger&quot;)) {
+weapon = &quot;Dagger&quot;;
+}else {
+weapon = &quot;your fists&quot;;
+} 
+%&gt;
+
+You are in combat against the &lt;%=mobName%&gt;!
+It has &lt;%=mobHP%&gt; HP.
+It&#39;s your turn:
+
+&lt;% if(demonDodged == &quot;false&quot;){ %&gt;
+[[Dodge|demonDodge]]
+&lt;%}%&gt;
+
+[[Attack with &lt;%=weapon%&gt;|demonAttack]]
+&lt;%
+if(character.inventory.hasItem(&quot;dagger&quot;)
+|| character.inventory.hasItem(&quot;axe&quot;)
+|| character.inventory.hasItem(&quot;sword&quot;)
+|| character.inventory.hasItem(&quot;fire-axe&quot;)
+|| character.inventory.hasItem(&quot;fire-sword&quot;))
+{
+if (mobAttack &gt; 1 &amp;&amp; demonParried == &quot;false&quot;) {
+%&gt;
+[[Parry with with &lt;%=weapon%&gt;|demonParry]]
+&lt;% }} %&gt;
+
+
+&lt;%
+if(character.inventory.hasItem(&quot;small-red-potion&quot;)
+|| character.inventory.hasItem(&quot;red-potion&quot;)
+|| character.inventory.hasItem(&quot;big-red-potion&quot;)) { 
+returnPassage = &quot;demonPlayerTurn&quot;;
+%&gt;
+[[Use Potion|playerHeal]]
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="85" name="demonDodge" tags="theme-frame-dark button-yellow" position="4483,444" size="100,100">&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+%&gt;
+
+&lt;%
+dodge = getRandomInt(0,2);
+regen = getRandomInt(1,6);
+if(dodge &gt; 0) { 
+character.heal(regen);
+demonDodged = &quot;true&quot;;
+%&gt;
+You successfully dodge the attack, but the demon is quick to attack once again. It seems that dodging is ineffective against the demon
+[[Continue|demonTurn]]
+&lt;% }else{ %&gt;
+You were unsuccessful in dodging the attack!
+[[Continue|demonTurn]]
+&lt;% } %&gt;
+</tw-passagedata><tw-passagedata pid="86" name="demonAttack" tags="theme-frame-dark button-yellow" position="4605,446" size="100,100">&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+%&gt;
+
+&lt;%
+if(weapon == &quot;Fire Sword&quot;) {
+damage = getRandomInt(15,25);
+}else if (weapon == &quot;Fire Axe&quot;) {
+damage = getRandomInt(12,18);
+}else if (weapon == &quot;Sword&quot;) {
+damage = getRandomInt(6,12);
+}else if (weapon == &quot;Axe&quot;) {
+damage = getRandomInt(5,8);
+}else if (weapon == &quot;Dagger&quot;) {
+damage = getRandomInt(2,5);
+}else {
+damage = getRandomInt(1,2);
+} 
+%&gt;
+
+&lt;% 
+mobHP = mobHP - damage;
+%&gt;
+
+You deal &lt;%=damage%&gt; damage to the enemy using &lt;%=weapon%&gt;
+
+&lt;%if (mobHP &lt;= 0) { %&gt;
+You have successfully defeated the demon!
+[[Continue|demonKilled]]
+&lt;% }else{ %&gt;
+[[Continue|demonTurn]]
+&lt;% if (character.inventory.hasItem(&quot;shield&quot;)) { %&gt;
+[[Defend with shield|demonDefend]]
+&lt;% } %&gt;
+&lt;% } %&gt;
+
+
+</tw-passagedata><tw-passagedata pid="87" name="demonParry" tags="theme-frame-dark button-yellow" position="4604,324" size="100,100">&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+%&gt;
+
+&lt;%
+parryChance = 0;
+parryChance = getRandomInt(0,11);
+
+
+if(parryChance &gt; 1) {
+demonParried = &quot;true&quot;
+%&gt;
+Parry successful but the demon&#39;s aura regenerates the sword. Parrying seems to have no effect against the demon.
+[[Continue|demonPlayerTurn]]
+&lt;% }else{ %&gt;
+Parry unsuccessful!
+[[Continue|demonTurn]]
+&lt;% } %&gt;
+
+</tw-passagedata><tw-passagedata pid="88" name="demonTurn" tags="theme-frame-dark" position="4759,326" size="100,100">The &lt;%=mobName%&gt; has &lt;%=mobHP%&gt; HP.
+It&#39;s the &lt;%=mobName%&gt;&#39;s turn!
+
+The &lt;%=mobName%&gt; attacks you for &lt;%=mobAttack%&gt;!
+&lt;% character.damage(mobAttack); %&gt;
+
+&lt;% if (character.health == 0) { %&gt;
+[[Continue|death]]
+&lt;% }else{ %&gt;
+[[Continue|demonPlayerTurn]]
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="89" name="demonKilled" tags="theme-frame-gold button-green" position="4909,326" size="100,100">Your last attack staggers the demon. He falls down to its knees and his aura begins to fade. You stand before the demon and wait until he disappears into the air. 
+&lt;/br&gt;
+&lt;/br&gt;
+You have successfully defeated the demon and saved the town from further invasion!
+
+[[Report back to Elliot|end1]]
+</tw-passagedata><tw-passagedata pid="90" name="demonDefend" tags="theme-frame-dark button-yellow" position="4601,199" size="100,100">&lt;%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+%&gt;
+
+&lt;%
+defend = getRandomInt(0,2);
+if(defend &gt; 0) { 
+character.inventory.removeItem(&quot;shield&quot;);
+%&gt;
+You successfully defended the attack, but the demon&#39;s power destroys your sheild!
+[[Continue|demonPlayerTurn]]
+&lt;% }else{ %&gt;
+You were unsuccessful in defending the attack!
+[[Continue|demonTurn]]
+&lt;% } %&gt;
+</tw-passagedata><tw-passagedata pid="91" name="end1" tags="" position="5053,319" size="100,100">As you start heading back, you see that the blood red sky is returning a normal blue and the rain has stopped.
+
+[[Continue|end2]]</tw-passagedata><tw-passagedata pid="92" name="end2" tags="" position="5053,476" size="100,100">You tell Elliot that you have defeated the demon. He is overjoyed and in awe: &quot;I can&#39;t believe you eliminated the demon all by yourself. Your skills and abilities are gifts from god. You will be known as the hero of  &lt;%=townName%&gt; for all eternity! Let us go introduce you to the town you saved!&quot;
+
+[[Become a hero|final]]
+[[No thanks|jokeEnd2]]</tw-passagedata><tw-passagedata pid="93" name="jokeEnd1" tags="button-white" position="2758,254" size="100,100">&lt;p style=&quot;font-family: times, serif; font-size:35pt&quot;&gt;
+The end!
+&lt;/p&gt;
+&lt;p style=&quot;font-family: times, serif; font-size:14pt&quot;&gt;
+Thanks for playing!
+&lt;/p&gt;
+
+[[Restart Game|Credits]]
+[[Just kidding|man3]]</tw-passagedata><tw-passagedata pid="94" name="final" tags="theme-frame-light" position="5008,653" size="100,100">&lt;p style=&quot;font-family: times, serif; font-size:35pt&quot;&gt;
+The end!
+&lt;/p&gt;
+&lt;p style=&quot;font-family: times, serif; font-size:14pt&quot;&gt;
+Thanks for playing!
+&lt;/br&gt;
+&lt;/br&gt;
+Stats:
+&lt;/br&gt;
+Ending Gold: &lt;%=character.gold%&gt;
+&lt;/br&gt;
+Total Monsters Killed: &lt;%=monstersKilled%&gt;
+&lt;/br&gt;
+Times Died: &lt;%=deathCount%&gt;
+&lt;/p&gt;
+
+[[Restart Game|Credits]]</tw-passagedata><tw-passagedata pid="95" name="jokeEnd2" tags="" position="4869,532" size="100,100">&lt;p style=&quot;font-family: times, serif; font-size:35pt&quot;&gt;
+The end!
+&lt;/p&gt;
+&lt;p style=&quot;font-family: times, serif; font-size:14pt&quot;&gt;
+Thanks for playing!
+&lt;/p&gt;
+
+[[Restart Game|Credits]]
+[[Just kidding|end2]]</tw-passagedata></tw-storydata>
 	<script>/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
